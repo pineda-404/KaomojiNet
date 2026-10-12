@@ -25,8 +25,9 @@ main_html = """
 
 
       letra = ["uwu", "owo", ">.<", "u.u", "T.T"];
-      random = Math.floor(Math.random() * letra.length);
-      aleatorio = letra[random];
+      var currentIndex = parseInt(localStorage.getItem('kaomoji_idx') || '0', 10);
+      aleatorio = letra[currentIndex % letra.length];
+      localStorage.setItem('kaomoji_idx', (currentIndex + 1) % letra.length);
 
       document.getElementById('mensaje').innerHTML  = 'Dibujando un ' + aleatorio;
       document.getElementById('numero').value = aleatorio;

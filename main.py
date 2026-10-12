@@ -24,8 +24,7 @@ main_html = """
       ctx = document.getElementById('myCanvas').getContext("2d");
 
 
-      numero = getRndInteger(0, 10);
-      letra = ["U", "N", "I"];
+      letra = ["uwu", "owo", ">.<", "u.u", "T.T"];
       random = Math.floor(Math.random() * letra.length);
       aleatorio = letra[random];
 
@@ -127,18 +126,23 @@ def upload():
     return redirect("/", code=302)
 
 
+CATEGORIAS = ["uwu", "owo", ">.<", "u.u", "T.T"]
+
 @app.route('/prepare', methods=['GET'])
 def prepare_dataset():
     images = []
-    d = ["I","N","U"]
     digits = []
-    for digit in d:
-      filelist = glob.glob('{}/*.png'.format(digit))
-      images_read = io.concatenate_images(io.imread_collection(filelist))
-      images_read = images_read[:, :, :, 3]
-      digits_read = np.array([digit] * images_read.shape[0])
-      images.append(images_read)
-      digits.append(digits_read)
+    for digit in CATEGORIAS:
+        filelist = glob.glob('{}/*.png'.format(digit))
+        if not filelist:
+            continue
+        images_read = io.concatenate_images(io.imread_collection(filelist))
+        images_read = images_read[:, :, :, 3]
+        digits_read = np.array([digit] * images_read.shape[0])
+        images.append(images_read)
+        digits.append(digits_read)
+    if not images:
+        return "No hay imagenes recolectadas aun", 400
     images = np.vstack(images)
     digits = np.concatenate(digits)
     np.save('X.npy', images)
@@ -153,8 +157,7 @@ def download_y():
     return send_file('./y.npy')
 
 if __name__ == "__main__":
-    digits = ['U', 'N', 'I']
-    for d in digits:
+    for d in CATEGORIAS:
         if not os.path.exists(str(d)):
             os.mkdir(str(d))
     app.run()

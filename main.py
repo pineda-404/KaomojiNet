@@ -254,8 +254,8 @@ def download_X():
 def download_y():
     return send_file("./y.npy")
 
+for d in CATEGORIAS:
+    os.makedirs(str(d), exist_ok=True)
+
 if __name__ == "__main__":
-    for d in CATEGORIAS:
-        if not os.path.exists(str(d)):
-            os.mkdir(str(d))
     app.run(host="0.0.0.0", port=5000, debug=True)

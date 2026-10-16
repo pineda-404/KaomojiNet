@@ -8,16 +8,17 @@ Clasificación de emoticones gestuales (Kaomoji) mediante Redes Neuronales Convo
 - Ivan Urbano
 
 ## Notebook
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YU0vfe6_6fMhZtoCjd1luKuFzv0wqhFH?usp=sharing)
+[![Link al notebook]](https://colab.research.google.com/drive/1YU0vfe6_6fMhZtoCjd1luKuFzv0wqhFH?usp=sharing)
 
-Acceso directo al notebook de entrenamiento en [Google Colab](https://colab.research.google.com/drive/1YU0vfe6_6fMhZtoCjd1luKuFzv0wqhFH?usp=sharing).
+## Aplicacion KaomojiNet
+[![Link (temporal) a la app]](https://kaomojinet-production.up.railway.app/)
 
 ## Categorías
-- `uwu`: Ternura / Felicidad
-- `owo`: Sorpresa / Curiosidad
-- `>.<`: Vergüenza cómica / Frustración
-- `u.u`: Resignación / Decepción
-- `T.T`: Llanto / Drama
+- `uwu`: Ternura  
+- `owo`: Sorpresa 
+- `>.<`: Vergüenza  
+- `u.u`: Resignación
+- `T.T`: Llanto
 
 ## Ejecución local
 

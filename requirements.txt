@@ -1,5 +1,5 @@
 Flask
 gunicorn
 scikit-image
+h5py
 numpy
-Pillow
